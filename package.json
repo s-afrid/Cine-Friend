@@ -26,7 +26,9 @@
   },
   "homepage": "https://github.com/s-afrid/Cine-Friend#readme",
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.13",
     "ejs": "^3.1.10",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "tailwindcss": "^4.1.13"
   }
 }
