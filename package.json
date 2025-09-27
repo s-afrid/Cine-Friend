@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/s-afrid/Cine-Friend#readme",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^5.1.0"
   }
 }
