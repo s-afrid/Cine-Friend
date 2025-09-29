@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Cutive&display=swap');
+
+.cutive-regular {
+  font-family: "Cutive", serif;
+  font-style: normal;
+}
+
+.cascadia-code {
+  font-family: "Cascadia Code", sans-serif;
+  font-style: normal;
+}
