@@ -10,9 +10,8 @@ function sendName() {
             },
             body: movie_name.value
         })
-        let b = await a.text()
+        let b = await a.json()
         console.log(b)
-        
     })
 }
 
