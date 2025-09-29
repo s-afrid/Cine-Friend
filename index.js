@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-import { getData } from "./modules/getData.js";
+import info from './routes/info.js';
 import cors from 'cors';
 
 const app = express()
@@ -20,19 +20,14 @@ app.use(express.text())
 // for cors
 app.use(cors())
 
+//All routes
+app.use('/info',info)
 
 
 app.get('/', (req,res) => {
     res.render("index",{App:'Cine Friend'})
 })
-app.post('/',async (req,res)=>{
-    const name = req.body;
-    let data = await getData(name)
-    console.log(data);
-    
-    res.send(data)
-    
-})
+
 
 app.listen(port, ()=>{
     console.log(`App live at http://localhost:${3000}`)

@@ -4,7 +4,8 @@ let analyse = document.getElementById("analyse")
 
 function sendName() {
     analyse.addEventListener("click",async (e)=>{
-        let a = await fetch('/',{method: "POST",
+
+        let a = await fetch('/info',{method: "POST",
             headers: {
                 'Content-Type': 'text/plain',
             },
