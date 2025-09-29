@@ -23,6 +23,7 @@ app.get('/', (req,res) => {
 app.post('/',(req,res)=>{
     const name = req.body;
     console.log(name)
+    res.send(`${name}`)
 })
 
 app.listen(port, ()=>{

@@ -10,6 +10,8 @@ function sendName() {
             },
             body: movie_name.value
         })
+        let b = await a.text()
+        console.log(b)
         
     })
 }
