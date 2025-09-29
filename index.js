@@ -25,10 +25,10 @@ app.use(cors())
 app.get('/', (req,res) => {
     res.render("index",{App:'Cine Friend'})
 })
-app.post('/',(req,res)=>{
+app.post('/',async (req,res)=>{
     const name = req.body;
-    let data = getData(name)
-    console.log(data.Title);
+    let data = await getData(name)
+    console.log(data);
     
     res.send(data)
     
