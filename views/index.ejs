@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/output.css">
     <link rel="stylesheet" href="/css/fonts.css">
+    
     <title><%= App %></title>
 </head>
-<body>
-    <div class="main flex flex-col gap-4 justify-center items-center h-[100vh] w-full bg-[#beef00]">
-        <h1 class="text-[40px] cutive-regular"><%= App %></h1>
-        <div class="inputbar">
-            <input class="bg-white outline-0 w-60 md:w-75 h-8 rounded-full p-3" type="text">
+<body class="flex justify-center items-center h-[100vh] bg-[url('/img/bg.png')] bg-no-repeat bg-cover bg-center">
+    <div class="main flex flex-col gap-4 justify-center items-center h-[60vh] w-[90vw] md:w-[70vw] self-center bg-[#beef00] rounded-2xl shadow-gray-700 shadow-2xl">
+        <div class="logo w-30">
+            <img class="rounded-full" src="/img/logo.png" alt="logo">
         </div>
-        <button class="cascadia-code bg-[#0B1B2A] text-white w-30 rounded-full">Analyse</button>
-    </div>  
+        <h1 class="text-[30px] md:text-[40px] cutive-regular"><%= App %></h1>
+        <div class="inputbar">
+            <input class="bg-white outline-0 w-60 md:w-75 h-8 rounded-full p-3 cascadia- shadow-gray-700 shadow-sm" id="movie_name" type="text">
+        </div>
+        <button class="cascadia-code bg-[#0B1B2A]  active:bg-red-50 text-white w-30 h-8 active:scale-75 rounded-full transition duration-400 ease-in-out" id="analyse">Analyse</button>
+    </div>
+    
+    <script src="/js/script.js"></script>
 </body>
 </html>
