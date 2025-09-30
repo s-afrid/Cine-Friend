@@ -12,8 +12,14 @@ router.get('/',(req,res)=>{
     
     res.render("info",{title: data.Title, 
         info: data.Title,
+        rated: data.Rated,
+        released: data.Released,
+        genre: data.Genre,
+        duration: data.Runtime,
+        boxoffice: data.BoxOffice,
     poster: data.Poster,
-ratings})
+    director: data.Director,
+    ratings})
 })
 
 router.post('/',async (req,res)=>{
