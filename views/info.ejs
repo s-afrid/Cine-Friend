@@ -11,6 +11,11 @@
      <div class="main flex flex-col gap-4 justify-center items-center h-[80vh] w-[90vw] md:w-[75vw] self-center bg-[#beef00] rounded-2xl shadow-gray-700 shadow-2xl">
          <h1 class="text-[15px] md:text-[30px] cutive-regular"><%= title %></h1>
         <img class="rounded-xl w-40 border-3 border-[#0B1B2A]  shadow-gray-700 shadow-sm" src="<%= poster %>" alt="poster">
+        <div class="rating cascadia-code flex gap-3">
+            <p><%= ratings[0] %></p>
+            <p><%= ratings[1] %></p>
+            <p><%= ratings[2] %></p>
+        </div>
      </div>
 </body>
 </html>
