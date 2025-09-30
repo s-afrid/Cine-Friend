@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/output.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    
+    <title><%= title %></title>
+</head>
+<body class="flex justify-center items-center h-[100vh] bg-[url('/img/bg.png')] bg-no-repeat bg-cover bg-center">
+    
+    <div class="main flex flex-col gap-4 items-center h-[60vh] w-[90vw] md:w-[70vw] self-center bg-[#beef00] rounded-2xl shadow-gray-700 shadow-2xl">
+        <button id="back" class="m-2 self-start rounded-xl bg-[#0B1B2A] text-white w-7 p-1 transition duration-400 ease-in-out active:scale-75  active:bg-red-50"><img class="w-100 invert" src="/img/leftarrow.svg" alt="Left"></button>
+        <div class="cross w-50 flex items-center justify-center">
+            <img class="rounded-full w-100" src="/img/cross.svg" alt="cross">
+        </div>
+        <h1 class="text-[17px] md:text-[30px] cutive-regular px-3 py-2 rounded-xl bg-[#0B1B2A] text-white text-center"><%= title %> is not found</h1>
+        <script src="/js/getback.js"></script>
+    </body>
+</html>

@@ -8,9 +8,9 @@
     <title><%= title %></title>
 </head>
 <body class="flex justify-center items-center h-[100vh] bg-[url('/img/bg.png')] bg-no-repeat bg-cover bg-center">
-     <div class="main relative flex flex-col gap-4 items-center h-[80vh] w-[90vw] md:w-[75vw] self-center bg-[#beef00] rounded-2xl shadow-gray-700 shadow-2xl">
-        <button id="back" class="absolute top-[2%] md:top-[3%] left-[2%] rounded-xl bg-[#0B1B2A] text-white w-7 p-1 transition duration-400 ease-in-out active:scale-75  active:bg-red-50"><img class="w-100 invert" src="/img/leftarrow.svg" alt="Left"></button>
-        <div class="movieinfo flex flex-col justify-center items-center gap-1 pt-5 p-3">
+     <div class="main flex flex-col gap-1 items-center h-[80vh] w-[90vw] md:w-[75vw] self-center bg-[#beef00] rounded-2xl shadow-gray-700 shadow-2xl">
+        <button id="back" class="m-2 self-start rounded-xl bg-[#0B1B2A] text-white w-7 p-1 transition duration-400 ease-in-out active:scale-75  active:bg-red-50"><img class="w-100 invert" src="/img/leftarrow.svg" alt="Left"></button>
+        <div class="movieinfo flex flex-col items-center gap-1 mb-4 mx-2 md:mx-1 p-3 overflow-y-scroll" style="scrollbar-width: none;">
          <h1 class="text-[17px] md:text-[30px] cutive-regular px-3 py-2 rounded-xl bg-[#0B1B2A] text-white text-center"><%= title %></h1>
          <div class="about flex gap-1 cascadia-code flex-wrap items-center justify-center">
             <p class="rated"><%= rated %> •</p>
@@ -28,7 +28,14 @@
             <p class="flex justify-center items-center gap-1"><span><img width="25" height="25" src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Rotten_Tomatoes.svg"></span><span><%= ratings[1] %></span></p>
             <p class="flex justify-center items-center gap-1"><span><img width="30" height="30" src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Metacritic_M.png"></span><span><%= ratings[2] %></span></p>
         </div>
-
+        <div class="other about flex flex-col gap-1 cascadia-code flex-wrap items-center justify-center">
+            <p class="writer">Written By: <%= writer %></p>
+             <p class="actor">Actors: <%= actor %></p>
+              <p class="plot m-3 w-70 px-2 py-1 rounded-xl bg-[#0B1B2A] text-white">Plot: <%= plot %></p>
+               <p class="awards">Awards: <%= awards %></p>
+             <p class="lang">Language: <%= lang %></p>
+              <p class="country">Country: <%= country %></p>
+        </div>
         </div>
      </div>
     <script src="/js/getback.js"></script>

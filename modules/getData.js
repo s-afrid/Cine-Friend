@@ -8,6 +8,6 @@ export const getData = async (movie) => {
     if (data.Response === "True") {
         return data
     } else {
-        return {'msg': 'Movie not found'}
+        return null
     }
 }
