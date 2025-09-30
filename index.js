@@ -4,8 +4,14 @@ import { fileURLToPath } from "url";
 import info from './routes/info.js';
 import cors from 'cors';
 
+// Import dotenv
+import dotenv from "dotenv";
+
+// Load .env variables
+dotenv.config();
+
 const app = express()
-const port = 3000
+const port = process.env.PORT
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
