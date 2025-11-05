@@ -47,10 +47,7 @@
     -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted;
   }
-  h1, h2, h3, h4, h5, h6 {
-    font-size: inherit;
-    font-weight: inherit;
-  }
+  
   a {
     color: inherit;
     -webkit-text-decoration: inherit;
@@ -382,7 +379,7 @@
     border-color: #0B1B2A;
   }
   .border-\[\#\] {
-    border-color: #;
+    border-color: none;
   }
   .bg-\[\#0B1B2A\] {
     background-color: #0B1B2A;

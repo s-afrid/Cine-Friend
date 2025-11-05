@@ -16,9 +16,7 @@ function delay(ms) {
 
 router.get('/',async (req,res)=>{
     
-
-    
-    reply = reply.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean); 
+   
     
     if (data) {
         let ratings = getRatings(data.Ratings)[1]
@@ -45,9 +43,6 @@ router.get('/',async (req,res)=>{
     else {
         res.render("not_found",{title: name})
     }
-
-
-    reply = null;
 })
 
 router.post('/',async (req,res)=>{
@@ -55,7 +50,8 @@ router.post('/',async (req,res)=>{
     name = req.body;
     data = await getData(name) 
     reply = await getAnalysis(name)
-
+    
+    console.log(reply)
     res.json(data)
 })
 
