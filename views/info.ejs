@@ -11,8 +11,12 @@
      <div class="main flex flex-col gap-1 items-center h-[80vh] w-[90vw] md:w-[75vw] self-center bg-[#beef00] rounded-2xl shadow-gray-700 shadow-2xl">
 
         <button id="back" class="m-2 self-start rounded-xl bg-[#0B1B2A] text-white w-7 p-1 transition duration-400 ease-in-out active:scale-75  active:bg-red-50"><img class="w-100 invert" src="/img/leftarrow.svg" alt="Left"></button>
+        
+        <div class="flex gap-5 h-[40%] mb-4 overflow-y-scroll" style="scrollbar-width: none;">
 
-        <div class="movieinfo flex flex-col items-center gap-1 mb-4 mx-2 md:mx-1 p-3 overflow-y-scroll" style="scrollbar-width: none;">
+            <!--This is movie info-->
+
+<div class="movieinfo flex flex-col items-center gap-1 mb-4 mx-2 md:mx-1 p-3 overflow-y-scroll w-1/2" style="scrollbar-width: none">
          <h1 class="text-[17px] md:text-[30px] cutive-regular px-3 py-2 rounded-xl bg-[#0B1B2A] text-white text-center"><%= title %></h1>
          <div class="about flex gap-1 cascadia-code flex-wrap items-center justify-center">
             <p class="rated"><%= rated %> •</p>
@@ -39,6 +43,17 @@
               <p class="country">Country: <%= country %></p>
         </div>
         </div>
+
+        <!--This is AI analysis-->
+
+        <div class="movieanalysis flex flex-col items-center gap-1 mb-4 mx-2 md:mx-1 p-3 overflow-y-scroll" style="scrollbar-width: none; width: 70%;">
+            <% reply.forEach(p => { %>
+    <p><%= p %></p>
+  <% }) %>
+        </div>
+
+        </div>
+        
         
      </div>
     <script src="/js/getback.js"></script>

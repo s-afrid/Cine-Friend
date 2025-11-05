@@ -8,7 +8,6 @@ const router = express.Router()
 let data = null;
 let reply = null
 let name;
-let done = false
 
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, 1000*ms));
@@ -16,11 +15,14 @@ function delay(ms) {
 
 
 router.get('/',async (req,res)=>{
+    
 
+    
+    reply = reply.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean); 
+    
     if (data) {
         let ratings = getRatings(data.Ratings)[1]
-    
-    res.render("info",{title: data.Title, 
+        let rendering = {title: data.Title, 
         info: data.Title,
         rated: data.Rated,
         released: data.Released,
@@ -35,32 +37,26 @@ router.get('/',async (req,res)=>{
     awards: data.Awards,
     lang: data.Language,
     country: data.Country,
-    ratings})
+    ratings,
+    reply}
+    
+    res.render("info",rendering)
     }
     else {
         res.render("not_found",{title: name})
     }
 
-    let cnt = 0
-    while(!reply) {
-        cnt = cnt+1
-        console.log(cnt)
-        await delay(1)
-    }
-    
+
+    reply = null;
 })
 
 router.post('/',async (req,res)=>{
     
     name = req.body;
+    data = await getData(name) 
+    reply = await getAnalysis(name)
 
-    const startData = getData(name)
-    const startAnalysis = getAnalysis(name)
-
-    data = await startData
     res.json(data)
-    reply = await startAnalysis
-    console.log(reply)
 })
 
 

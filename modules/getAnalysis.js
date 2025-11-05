@@ -25,7 +25,7 @@ export const getAnalysis = async (movie) => {
             "X-Title": "CineFriend" 
     },
       body: JSON.stringify({
-        model: "meta-llama/llama-3-8b-instruct",
+        model: "minimax/minimax-m2:free",
         messages: [
           { role: "system", content: "You are a helpful film critic assistant." },
           { role: "user", content: prompt },
