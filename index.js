@@ -11,7 +11,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express()
-const port = process.env.PORT
+const port = process.env.PORT || 3000;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -36,5 +36,5 @@ app.get('/', (req,res) => {
 
 
 app.listen(port, ()=>{
-    console.log(`App live at http://localhost:${3000}`)
+    console.log(`App live at http://localhost:${port}`)
 })

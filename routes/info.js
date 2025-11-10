@@ -49,7 +49,7 @@ router.post('/',async (req,res)=>{
     
     name = req.body;
     data = await getData(name) 
-    reply = await getAnalysis(name)
+    reply = await getAnalysis(name, data.Director)
     
     
     res.json(data)

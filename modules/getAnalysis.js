@@ -10,10 +10,10 @@ dotenv.config({ path: path.resolve("./.env") });
 
 
 
-export const getAnalysis = async (movie) => {
+export const getAnalysis = async (movie, director) => {
 
 
-  const prompt = `Analyze the movie "${movie}" as if you are a professional film critic and cinephile. Your response must be written entirely in clean, well-structured HTML format with consistent tags every time.  
+  const prompt = `Analyze the movie "${movie}" directed by "${director}" as if you are a professional film critic and cinephile. Your response must be written entirely in clean, well-structured HTML format with consistent tags every time.  
 
 Follow this structure exactly for every response:
 
