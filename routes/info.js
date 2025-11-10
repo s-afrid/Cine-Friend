@@ -51,7 +51,7 @@ router.post('/',async (req,res)=>{
     data = await getData(name) 
     reply = await getAnalysis(name)
     
-    console.log(reply)
+    
     res.json(data)
 })
 
