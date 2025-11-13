@@ -8,45 +8,51 @@
     <title><%= title %></title>
 </head>
 <body class="flex justify-center items-center h-[100vh] bg-[url('/img/bg.png')] bg-no-repeat bg-cover bg-center">
-     <div class="main flex flex-col gap-5 items-center h-[80vh] w-[90vw] md:w-[75vw] self-center bg-[#beef00] rounded-2xl shadow-gray-700 shadow-2xl">
+     <div class="main flex flex-col gap-5 items-center h-[80vh]  w-[90vw] md:w-[75vw] self-center bg-[#beef00] rounded-2xl shadow-gray-700 shadow-2xl">
 
-        <button id="back" class="m-2 self-start rounded-xl bg-[#0B1B2A] text-white w-7 p-1 transition duration-400 ease-in-out active:scale-75  active:bg-red-50"><img class="w-100 invert" src="/img/leftarrow.svg" alt="Left"></button>
+        <div class="flex self-start">
+            <button id="back" class="m-2 self-start rounded-xl bg-[#0B1B2A] text-white w-7 p-1 transition duration-400 ease-in-out active:scale-75  active:bg-red-50"><img class="w-100 invert" src="/img/leftarrow.svg" alt="Left"></button>
+            <button id="info" class="m-2 self-start rounded-xl bg-[#0B1B2A] text-[#dddcdc] py-1 px-2 transition duration-400 ease-in-out active:scale-75  active:bg-red-50 cascadia-code text-sm md:hidden">Meta Info</button>
+        </div>
+
         
-        <div class="flex gap-5 h-[90%] mb-4 overflow-y-scroll" style="scrollbar-width: none;">
+        
+        <div class="flex gap-3 h-[90%] mb-4 overflow-y-scroll relative" style="scrollbar-width: none;">
 
             <!--This is movie info-->
 
-<div class="movieinfo flex flex-col items-center gap-4 mb-4 mx-2 md:mx-1 p-3 overflow-y-scroll w-1/2 md:border-r-2 md:border-green-900" style="scrollbar-width: none">
-         <h1 class="text-[17px] md:text-[30px] cutive-regular px-3 py-2 rounded-xl bg-[#0B1B2A] text-white text-center"><%= title %></h1>
+<div id="movieinfo" class="movieinfo relative flex flex-col items-center gap-4 mb-4 mx-2 md:mx-1 p-3 overflow-y-scroll w-[80%] h-[99%] md:w-1/2 border-r-2 border-green-900 absolute md:static left-[-100%] bg-[#e3f1aa] md:bg-[#beef00] transition-all duration-300 rounded-2xl md:rounded-none border-t-2 border-b-2 border-l-2 md:border-t-0 md:border-b-0 md:border-l-0" style="scrollbar-width: none">
+        <button id="back" class="m-2 absolute rounded-xl bg-[#0B1B2A] text-white w-7 p-1 transition duration-400 ease-in-out active:scale-75  active:bg-red-50"><img class="w-100 invert" src="/img/cross.svg" alt="Left"></button>
+         <h1 class="text-[16px] lg:text-[30px] cutive-regular px-3 py-2 rounded-xl bg-[#0B1B2A] text-white text-center"><%= title %></h1>
          <div class="about flex gap-1 cascadia-code flex-wrap items-center justify-center">
-            <p class="rated"><%= rated %> •</p>
-            <p class="released"><%= released %> •</p>
-            <p class="genre"><%= genre %> •</p>
-            <p class="duration"><%= duration %></p>
+            <p class="rated text-[13px] lg:text-[15px]"><%= rated %> •</p>
+            <p class="released text-[13px] lg:text-[15px]"><%= released %> •</p>
+            <p class="genre text-[13px] lg:text-[15px]"><%= genre %> •</p>
+            <p class="duration text-[13px] lg:text-[15px]"><%= duration %></p>
          </div>
         <img class="rounded-md w-45 border-3 border-[#0B1B2A]  shadow-gray-700 shadow-sm" src="<%= poster %>" alt="poster">
         <div class="business">
-            <p class="boxoffice cascadia-code">Box Office:<%= boxoffice %></p>
+            <p class="boxoffice cascadia-code text-[13px] lg:text-[15px]">Box Office:<%= boxoffice %></p>
         </div>
-        <p class="director cascadia-code px-2 py-1 rounded-xl bg-[#0B1B2A] text-white">Director: <%= director %></p>
+        <p class="director cascadia-code px-2 py-1 rounded-xl bg-[#0B1B2A] text-white text-[13px] lg:text-[15px]">Director: <%= director %></p>
         <div class="rating cascadia-code flex gap-4 text-[12px]">
             <p class="flex justify-center items-center gap-1"><span><img width="40" height="40" src="https://upload.wikimedia.org/wikipedia/commons/6/69/IMDB_Logo_2016.svg"></span><span><%= ratings[0] %></span></p>
             <p class="flex justify-center items-center gap-1"><span><img width="25" height="25" src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Rotten_Tomatoes.svg"></span><span><%= ratings[1] %></span></p>
             <p class="flex justify-center items-center gap-1"><span><img width="30" height="30" src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Metacritic_M.png"></span><span><%= ratings[2] %></span></p>
         </div>
         <div class="other about flex flex-col gap-1 cascadia-code flex-wrap items-center justify-center">
-            <p class="writer">Written By: <%= writer %></p>
-             <p class="actor">Actors: <%= actor %></p>
-              <p class="plot m-3 w-70 px-2 py-1 rounded-xl bg-[#0B1B2A] text-white">Plot: <%= plot %></p>
-               <p class="awards">Awards: <%= awards %></p>
-             <p class="lang">Language: <%= lang %></p>
-              <p class="country">Country: <%= country %></p>
+            <p class="writer m-2 w-[95%] text-[13px] lg:text-[15px] text-center">Written By: <%= writer %></p>
+             <p class="actor m-2 w-[95%] text-[13px] lg:text-[15px] text-center">Actors: <%= actor %></p>
+              <p class="plot m-2 w-[95%] px-2 py-1 rounded-xl bg-[#0B1B2A] text-white text-[13px] lg:text-[15px] text-center">Plot: <%= plot %></p>
+               <p class="awards m-3 w-[95%] text-[13px] lg:text-[15px] text-center">Awards: <%= awards %></p>
+             <p class="lang m-3 w-[95%] px-2 py-1 text-[13px] lg:text-[15px] text-center">Language: <%= lang %></p>
+              <p class="country w-[95%] m-3 px-2 py-1 text-[13px] lg:text-[15px] text-center">Country: <%= country %></p>
         </div>
         </div>
 
         <!--This is AI analysis-->
 
-        <div class="movieanalysis flex flex-col items-center gap-4 mb-4 mx-2 md:mx-4 p-2 overflow-y-scroll cascadia-code text-center" style="scrollbar-width: none; width: 72%;">
+        <div class="movieanalysis flex flex-col items-center gap-4 mb-4 mx-1 md:mx-2 p-2 overflow-y-scroll cascadia-code text-center w-full md:w-[72%] h-[98%]" style="scrollbar-width: none;">
             <%- reply %>
         </div>
 
