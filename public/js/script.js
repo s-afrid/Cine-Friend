@@ -22,6 +22,9 @@ async function main() {
 
       if (!res.ok) throw new Error("Request failed");
 
+       e.target.disabled = false;
+        e.target.style.opacity = "1";
+  
       window.location.href = "/info";
       return;
     } catch (err) {
