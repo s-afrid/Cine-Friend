@@ -2,25 +2,26 @@ const back = document.getElementById("back");
 const info = document.getElementById("info");
 const close = document.getElementById("close");
 const infopage = document.getElementById("movieinfo");
-const movieanalysis = document.getElementById("movieanalysis")
-async function main() {
-    back.addEventListener("click",(e)=>{
-        window.location.href = '/'
-    })
+const movieanalysis = document.getElementById("movieanalysis");
 
-    if (info) {
+async function main() {
+  back.addEventListener("click", () => {
+    window.location.href = "/";
+  });
+
+  if (info) {
     info.addEventListener("click", () => {
-      
-      infopage.style.left = "0px";
-      movieanalysis.style.filter = "blur(10px)";
+      infopage.style.left = "0";
+      movieanalysis.style.opacity = "0.1"
     });
   }
 
-  close.addEventListener("click",()=>{
-    
+  if (close) {
+    close.addEventListener("click", () => {
       infopage.style.left = "-100%";
-      movieanalysis.style.filter = "none";
-  })
-
+      movieanalysis.style.opacity = "1";
+    });
+  }
 }
-main()
+
+window.addEventListener("DOMContentLoaded", main);
